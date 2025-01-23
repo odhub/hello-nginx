@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-nginx
+  template:
+    metadata:
+      labels:
+        app: hello-world-nginx
+    spec:
+      containers:
+        - name: 
+          image: quay.io/redhattraining/hello-world-nginx:v1.0
+          ports:
+            - containerPort: 80
